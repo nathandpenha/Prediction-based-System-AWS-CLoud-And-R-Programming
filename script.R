@@ -15,8 +15,8 @@ function(res) {
   res$setHeader("Access-Control-Allow-Origin", "*")
   plumber::forward()
 }
-raw_data <- read.csv("~/Suggestion-Prediction-based-in-R-programming-Using-Apriori-algorithm/Raw Data.csv")
-data <- read.csv("~/Suggestion-Prediction-based-in-R-programming-Using-Apriori-algorithm/Sample - Superstore.csv")
+raw_data <- read.csv("~/Prediction-based-System-AWS-CLoud-And-R-Programming/Raw Data.csv")
+data <- read.csv("~/Prediction-based-System-AWS-CLoud-And-R-Programming/Sample - Superstore.csv")
 clean_data <- ddply(data, c("Order.ID","Order.Date","Ship.Mode","Segment","City","State","Region"), function(dd)paste(dd$Product.Name, collapse = ","))
 
 
