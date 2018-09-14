@@ -1,34 +1,34 @@
 $(document).ready(function() {
 	$.ajax({
-		url: 'http://127.0.0.0:9191/totalRecords',
+		url: 'http://0.0.0.0:9191/totalRecords',
 		type: 'GET',
 		success: function(success){
 			$(".totalRecords").html(success);
 		},
 	});
 	$.ajax({
-		url: 'http://127.0.0.0:9191/totalProducts',
+		url: 'http://0.0.0.0:9191/totalProducts',
 		type: 'GET',
 		success: function(success){
 			$(".totalProducts").html(success);
 		},
 	});
 	$.ajax({
-		url: 'http://127.0.0.0:9191/users',
+		url: 'http://0.0.0.0:9191/users',
 		type: 'GET',
 		success: function(success){
 			$(".users").html(success);
 		},
 	});
 	$.ajax({
-		url: 'http://127.0.0.0:9191/profit',
+		url: 'http://0.0.0.0:9191/profit',
 		type: 'GET',
 		success: function(success){
 			$(".profit").html("$ "+success);
 		},
 	});
 	$.ajax({
-		url: 'http://127.0.0.0:9191/segmentData',
+		url: 'http://0.0.0.0:9191/segmentData',
 		type: 'GET',
 		success: function(success){
 			js = success[0].split(",");
@@ -71,7 +71,7 @@ $(document).ready(function() {
 		},
 	});
 	$.ajax({
-		url: 'http://127.0.0.0:9191/ship',
+		url: 'http://0.0.0.0:9191/ship',
 		type: 'GET',
 		success: function(data){
 			var morris = Morris.Bar({
