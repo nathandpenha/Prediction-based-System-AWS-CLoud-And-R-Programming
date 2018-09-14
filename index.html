@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+	<title>Market Basket Analysis</title>
+	<!-- Bootstrap -->
+	<link href="admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link href="admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<!-- NProgress -->
+	<link href="admin/vendors/nprogress/nprogress.css" rel="stylesheet">
+	<!-- iCheck -->
+	<link href="admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	<!-- bootstrap-progressbar -->
+	<link href="admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+	<!-- JQVMap -->
+	<link href="admin/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+	<!-- bootstrap-daterangepicker -->
+	<link href="admin/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+	<!-- Custom Theme Style -->
+	<link href="admin/build/css/custom.min.css" rel="stylesheet">
+</head>
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col">
+				<div class="left_col scroll-view">
+					<div class="navbar nav_title" style="border: 0;">
+						<a href="index.html" class="site_title">Market Basket</a>
+					</div>
+					<div class="clearfix"></div>
+					<!-- menu profile quick info -->
+					<div class="profile clearfix">
+						<div class="profile_pic">
+							<img src="admin/production/images/user.png" alt="admin." class="img-circle profile_img">
+						</div>
+						<div class="profile_info">
+							<span>Welcome,</span>
+							<h2>Akash Arora</h2>
+						</div>
+					</div>
+					<!-- /menu profile quick info -->
+					<br />
+					<!-- sidebar menu -->
+					<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+						<div class="menu_section">
+							<h3>General</h3>
+						</div>
+						<div class="menu_section">
+							<h3>Live On</h3>
+							<ul class="nav side-menu">
+								<ul class="nav side-menu">
+									<li><a><i class="fa fa-home"></i> Home </a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /sidebar menu -->
+						<!-- /menu footer buttons -->
+						<div class="sidebar-footer hidden-small">
+							<a data-toggle="tooltip" data-placement="top" title="Settings">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+							</a>
+							<a data-toggle="tooltip" data-placement="top" title="FullScreen">
+								<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+							</a>
+							<a data-toggle="tooltip" data-placement="top" title="Lock">
+								<span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+							</a>
+							<a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+								<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+							</a>
+						</div>
+						<!-- /menu footer buttons -->
+					</div>
+				</div>
+				<!-- top navigation -->
+				<div class="top_nav">
+					<div class="nav_menu">
+						<nav>
+							<div class="nav toggle">
+								<a id="menu_toggle"><i class="fa fa-bars"></i></a>
+							</div>
+							<ul class="nav navbar-nav navbar-right">
+								<li class="">
+									<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<img src="admin/production/images/user.png" alt="">Akash Arora
+										<span class=" fa fa-angle-down"></span>
+									</a>
+									<ul class="dropdown-menu dropdown-usermenu pull-right">
+										<li><a href="javascript:;"> Profile</a></li>
+										<li>
+											<a href="javascript:;">
+												<span class="badge bg-red pull-right">50%</span>
+												<span>Settings</span>
+											</a>
+										</li>
+										<li><a href="javascript:;">Help</a></li>
+										<li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<!-- /top navigation -->
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<!-- top tiles -->
+					<div class="row tile_count">
+						<div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+							<span class="count_top"><i class="fa fa-floppy-o"></i> Total Records</span>
+							<div class="count totalRecords"></div>
+						</div>
+						<div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+							<span class="count_top"><i class="fa fa-cart-plus"></i> Total Products Sold</span>
+							<div class="count totalProducts"></div>
+						</div>
+						<div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+							<span class="count_top"><i class="fa fa-user"></i> Total Users</span>
+							<div class="count green users"></div>
+						</div>
+						<div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+							<span class="count_top"><i class="fa fa-usd"></i> Total Profit</span>
+							<div class="count profit"></div>
+						</div>
+					</div>
+					<!-- /top tiles -->
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="dashboard_graph">
+								<div class="row x_title">
+									<div class="col-md-6">
+										<h3>Profit Analysis</h3>
+									</div>
+								</div>
+								<div class="col-md-12 col-sm-9 col-xs-12">
+									<img src="http://localhost:9191/profitChart">
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<br />
+					<div class="row">
+						<div class="col-md-6 col-sm-4 col-xs-12">
+							<div class="x_panel tile">
+								<div class="x_title">
+									<h2>Shipping Mode</h2>
+									<ul class="nav navbar-right panel_toolbox">
+										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+										</li>
+										<li class="dropdown">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+											<ul class="dropdown-menu" role="menu">
+												<li><a href="#">Settings 1</a>
+												</li>
+												<li><a href="#">Settings 2</a>
+												</li>
+											</ul>
+										</li>
+										<li><a class="close-link"><i class="fa fa-close"></i></a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+								<div class="x_content">
+									<h4>Shipping Method Used by Customers</h4>
+									<div id="graph_bar1" style="width:100%; height:280px;"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6 col-sm-4 col-xs-12">
+							<div class="x_panel tile fixed_height_320 overflow_hidden">
+								<div class="x_title">
+									<h2>User Type</h2>
+									<ul class="nav navbar-right panel_toolbox">
+										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+										</li>
+										<li class="dropdown">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+											<ul class="dropdown-menu" role="menu">
+												<li><a href="#">Settings 1</a>
+												</li>
+												<li><a href="#">Settings 2</a>
+												</li>
+											</ul>
+										</li>
+										<li><a class="close-link"><i class="fa fa-close"></i></a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+								<div class="x_content">
+									<table class="" style="width:100%">
+										<tr>
+											<th style="width:37%;">
+												<p>Top 3</p>
+											</th>
+											<th>
+												<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+													<p class="">Segment</p>
+												</div>
+												<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+													<p class="">% Share</p>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<td>
+												<canvas class="segment" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
+											</td>
+											<td>
+												<table class="tile_info">
+													<tr>
+														<td>
+															<p><i class="fa fa-square purple"></i>Corporate </p>
+														</td>
+														<td>30.22%</td>
+													</tr>
+													<tr>
+														<td>
+															<p><i class="fa fa-square aero"></i>Consumer </p>
+														</td>
+														<td>51.94%</td>
+													</tr>
+													<tr>
+														<td>
+															<p><i class="fa fa-square red"></i>Home Office </p>
+														</td>
+														<td>17.84%</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="x_panel col-md-12">
+							<div class="x_title">
+								<h2>Regional Analysis</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+									</li>
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Settings 1</a>
+											</li>
+											<li><a href="#">Settings 2</a>
+											</li>
+										</ul>
+									</li>
+									<li><a class="close-link"><i class="fa fa-close"></i></a>
+									</li>
+								</ul>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+								<iframe src="Orange/BoxRegion.html" width="100%" height="200px" scrolling="no" frameborder=0></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /page content -->
+
+				<!-- footer content -->
+				<footer>
+					<div class="pull-right">
+						Akash Arora | Nathan Dpenha
+					</div>
+					<div class="clearfix"></div>
+					<!-- /footer content -->
+				</div>
+			</div>
+
+			<!-- jQuery -->
+			<script src="admin/vendors/jquery/dist/jquery.min.js"></script>
+			<!-- Bootstrap -->
+			<script src="admin/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+			<!-- FastClick -->
+			<script src="admin/vendors/fastclick/lib/fastclick.js"></script>
+			<!-- NProgress -->
+			<script src="admin/vendors/nprogress/nprogress.js"></script>
+			<!-- Chart.js -->
+			<script src="admin/vendors/Chart.js/dist/Chart.min.js"></script>
+			<!-- gauge.js -->
+			<script src="admin/vendors/gauge.js/dist/gauge.min.js"></script>
+			<!-- bootstrap-progressbar -->
+			<script src="admin/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+			<!-- iCheck -->
+			<script src="admin/vendors/iCheck/icheck.min.js"></script>
+			<!-- Skycons -->
+			<script src="admin/vendors/skycons/skycons.js"></script>
+			<!-- Flot -->
+			<script src="admin/vendors/Flot/jquery.flot.js"></script>
+			<script src="admin/vendors/Flot/jquery.flot.pie.js"></script>
+			<script src="admin/vendors/Flot/jquery.flot.time.js"></script>
+			<script src="admin/vendors/Flot/jquery.flot.stack.js"></script>
+			<script src="admin/vendors/Flot/jquery.flot.resize.js"></script>
+			<!-- Flot plugins -->
+			<script src="admin/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+			<script src="admin/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+			<script src="admin/vendors/flot.curvedlines/curvedLines.js"></script>
+			<!-- DateJS -->
+			<script src="admin/vendors/DateJS/build/date.js"></script>
+			<!-- JQVMap -->
+			<script src="admin/vendors/jqvmap/dist/jquery.vmap.js"></script>
+			<script src="admin/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+			<script src="admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+			<!-- bootstrap-daterangepicker -->
+			<script src="admin/vendors/moment/min/moment.min.js"></script>
+			<script src="admin/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+			<script src="admin/vendors/raphael/raphael.min.js"></script>
+			<script src="admin/vendors/morris.js/morris.min.js" charset="utf-8"></script>
+
+			<!-- Custom Theme Scripts -->
+			<script src="admin/build/js/custom.min.js"></script>
+			<script src="r.js" charset="utf-8"></script>
+		</body>
+		</html>
