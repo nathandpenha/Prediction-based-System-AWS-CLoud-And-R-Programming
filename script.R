@@ -106,8 +106,8 @@ data_sorted$Order.ID <- as.numeric(data_sorted$Order.ID)
 data_item <- ddply(data, c("Order.ID"), function(dd)paste(dd$Product.Name, collapse = ","))
 
 data_item$Order.ID <- NULL
-write.csv(data_item,"~/Suggestion-Prediction-based-in-R-programming-Using-Apriori-algorithm/link.csv")
-trans <- read.transactions("~/Suggestion-Prediction-based-in-R-programming-Using-Apriori-algorithm/link.csv", format = "basket", sep=",", cols=1)
+write.csv(data_item,"~/Prediction-based-System-AWS-CLoud-And-R-Programming/link.csv")
+trans <- read.transactions("~/Prediction-based-System-AWS-CLoud-And-R-Programming/link.csv", format = "basket", sep=",", cols=1)
 trans@itemInfo$labels <- gsub("\"","", trans@itemInfo$labels)
 basket_rules <- apriori(trans,parameter = list(supp = 0.001, minlen = 1, target = "frequent itemsets" ))
 ins <- inspect(basket_rules)
