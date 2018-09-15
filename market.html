@@ -115,47 +115,11 @@
 				<!-- /top navigation -->
 				<!-- page content -->
 				<div class="right_col" role="main">
-					<!-- top tiles -->
-					<div class="row tile_count">
-						<div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
-							<span class="count_top"><i class="fa fa-floppy-o"></i> Total Records</span>
-							<div class="count totalRecords"></div>
-						</div>
-						<div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
-							<span class="count_top"><i class="fa fa-cart-plus"></i> Total Products Sold</span>
-							<div class="count totalProducts"></div>
-						</div>
-						<div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
-							<span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-							<div class="count green users"></div>
-						</div>
-						<div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
-							<span class="count_top"><i class="fa fa-usd"></i> Total Profit</span>
-							<div class="count profit"></div>
-						</div>
-					</div>
-					<!-- /top tiles -->
 					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-							<div class="dashboard_graph">
-								<div class="row x_title">
-									<div class="col-md-6">
-										<h3>Profit Analysis</h3>
-									</div>
-								</div>
-								<div class="col-md-12 col-sm-9 col-xs-12">
-									<img src="http://localhost:9191/profitChart">
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-					</div>
-					<br />
-					<div class="row">
-						<div class="col-md-6 col-sm-4 col-xs-12">
-							<div class="x_panel tile">
+						<div class="col-md-12">
+							<div class="x_panel">
 								<div class="x_title">
-									<h2>Shipping Mode</h2>
+									<h2>Apriori Based Trending</h2>
 									<ul class="nav navbar-right panel_toolbox">
 										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 										</li>
@@ -174,16 +138,17 @@
 									<div class="clearfix"></div>
 								</div>
 								<div class="x_content">
-									<h4>Shipping Method Used by Customers</h4>
-									<div id="graph_bar1" style="width:100%; height:280px;"></div>
+									<ul class="list-unstyled timeline" id="listItems">
+									</ul>
 								</div>
 							</div>
 						</div>
-
-						<div class="col-md-6 col-sm-4 col-xs-12">
-							<div class="x_panel tile fixed_height_320 overflow_hidden">
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="x_panel">
 								<div class="x_title">
-									<h2>User Type</h2>
+									<h2>Apriori Chart</h2>
 									<ul class="nav navbar-right panel_toolbox">
 										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
 										</li>
@@ -202,75 +167,8 @@
 									<div class="clearfix"></div>
 								</div>
 								<div class="x_content">
-									<table class="" style="width:100%">
-										<tr>
-											<th style="width:37%;">
-												<p>Top 3</p>
-											</th>
-											<th>
-												<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-													<p class="">Segment</p>
-												</div>
-												<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-													<p class="">% Share</p>
-												</div>
-											</th>
-										</tr>
-										<tr>
-											<td>
-												<canvas class="segment" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
-											</td>
-											<td>
-												<table class="tile_info">
-													<tr>
-														<td>
-															<p><i class="fa fa-square purple"></i>Corporate </p>
-														</td>
-														<td>30.22%</td>
-													</tr>
-													<tr>
-														<td>
-															<p><i class="fa fa-square aero"></i>Consumer </p>
-														</td>
-														<td>51.94%</td>
-													</tr>
-													<tr>
-														<td>
-															<p><i class="fa fa-square red"></i>Home Office </p>
-														</td>
-														<td>17.84%</td>
-													</tr>
-												</table>
-											</td>
-										</tr>
-									</table>
+									<img src="http://localhost:9191/apriori">
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="x_panel col-md-12">
-							<div class="x_title">
-								<h2>Regional Analysis</h2>
-								<ul class="nav navbar-right panel_toolbox">
-									<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-									</li>
-									<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">Settings 1</a>
-											</li>
-											<li><a href="#">Settings 2</a>
-											</li>
-										</ul>
-									</li>
-									<li><a class="close-link"><i class="fa fa-close"></i></a>
-									</li>
-								</ul>
-								<div class="clearfix"></div>
-							</div>
-							<div class="x_content">
-								<iframe src="Orange/BoxRegion.html" width="100%" height="200px" scrolling="no" frameborder=0></iframe>
 							</div>
 						</div>
 					</div>
@@ -330,6 +228,6 @@
 
 			<!-- Custom Theme Scripts -->
 			<script src="admin/build/js/custom.min.js"></script>
-			<script src="r.js" charset="utf-8"></script>
+			<script src="market.js" charset="utf-8"></script>
 		</body>
 		</html>

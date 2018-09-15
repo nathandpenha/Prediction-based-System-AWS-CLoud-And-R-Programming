@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+	<title>Market Basket Analysis</title>
+	<!-- Bootstrap -->
+	<link href="admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link href="admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<!-- NProgress -->
+	<link href="admin/vendors/nprogress/nprogress.css" rel="stylesheet">
+	<!-- iCheck -->
+	<link href="admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	<!-- bootstrap-progressbar -->
+	<link href="admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+	<!-- JQVMap -->
+	<link href="admin/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+	<!-- bootstrap-daterangepicker -->
+	<link href="admin/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+	<!-- Custom Theme Style -->
+	<link href="admin/build/css/custom.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="admin/vendors/datatables.net-bs/css/dataTables.bootstrap.css">
+
+</head>
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col">
+				<div class="left_col scroll-view">
+					<div class="navbar nav_title" style="border: 0;">
+						<a href="index.html" class="site_title">Profti Predictions</a>
+					</div>
+					<div class="clearfix"></div>
+					<!-- menu profile quick info -->
+					<div class="profile clearfix">
+						<div class="profile_pic">
+							<img src="admin/production/images/user.png" alt="admin." class="img-circle profile_img">
+						</div>
+						<div class="profile_info">
+							<span>Welcome,</span>
+							<h2>Akash Arora</h2>
+						</div>
+					</div>
+					<!-- /menu profile quick info -->
+					<br />
+					<!-- sidebar menu -->
+					<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+						<div class="menu_section">
+							<h3>General</h3>
+						</div>
+						<div class="menu_section">
+							<h3>Live On</h3>
+							<ul class="nav side-menu">
+								<ul class="nav side-menu">
+									<li><a href="index.html"><i class="fa fa-home"></i> Home </a>
+									</li>
+									<li><a href="market.html"><i class="fa fa-shopping-cart"></i> Market Trending </a>
+									</li>
+									<li><a href="profit.html"><i class="fa fa-usd"></i> Profit Predictions </a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /sidebar menu -->
+						<!-- /menu footer buttons -->
+						<div class="sidebar-footer hidden-small">
+							<a data-toggle="tooltip" data-placement="top" title="Settings">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+							</a>
+							<a data-toggle="tooltip" data-placement="top" title="FullScreen">
+								<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+							</a>
+							<a data-toggle="tooltip" data-placement="top" title="Lock">
+								<span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+							</a>
+							<a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+								<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+							</a>
+						</div>
+						<!-- /menu footer buttons -->
+					</div>
+				</div>
+				<!-- top navigation -->
+				<div class="top_nav">
+					<div class="nav_menu">
+						<nav>
+							<div class="nav toggle">
+								<a id="menu_toggle"><i class="fa fa-bars"></i></a>
+							</div>
+							<ul class="nav navbar-nav navbar-right">
+								<li class="">
+									<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+										<img src="admin/production/images/user.png" alt="">Akash Arora
+										<span class=" fa fa-angle-down"></span>
+									</a>
+									<ul class="dropdown-menu dropdown-usermenu pull-right">
+										<li><a href="javascript:;"> Profile</a></li>
+										<li>
+											<a href="javascript:;">
+												<span class="badge bg-red pull-right">50%</span>
+												<span>Settings</span>
+											</a>
+										</li>
+										<li><a href="javascript:;">Help</a></li>
+										<li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<!-- /top navigation -->
+				<!-- page content -->
+				<div class="right_col" role="main">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="x_panel">
+								<div class="x_title">
+									<h2>Profit Preditctions Using Neural Network</h2>
+									<ul class="nav navbar-right panel_toolbox">
+										<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+										</li>
+										<li class="dropdown">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+											<ul class="dropdown-menu" role="menu">
+												<li><a href="#">Settings 1</a>
+												</li>
+												<li><a href="#">Settings 2</a>
+												</li>
+											</ul>
+										</li>
+										<li><a class="close-link"><i class="fa fa-close"></i></a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+								<div class="x_content">
+									<table class="table table-bordered table-striped" id="tbl">
+										<thead>
+											<tr>
+											<td>#</td><td>Neural Network</td><td>Profit</td><td>Order ID</td><td>Order Date</td><td>Ship Date</td><td>Customer ID</td><td>Customer Name</td><td>Product ID</td><td>Product Name</td>
+										</tr>
+										</thead>
+									  <tbody>
+									  <tr>
+									    <td>1</td><td>63.5476</td><td>41.9136</td><td>CA-2016-152156</td><td>08/11/16</td><td>11/11/16</td><td>CG-12520</td><td>Claire Gute</td><td>FUR-BO-10001798</td><td>Bush Somerset Collection Bookcase</td></tr>
+									  <tr>
+									    <td>2</td><td>192.9300</td><td>219.5820</td><td>CA-2016-152156</td><td>08/11/16</td><td>11/11/16</td><td>CG-12520</td><td>Claire Gute</td><td>FUR-CH-10000454</td><td>Hon Deluxe Fabric Upholstered Stacking Chairs, Rounded Back</td></tr>
+									  <tr>
+									    <td>3</td><td>15.2503</td><td>6.8714</td><td>CA-2016-138688</td><td>12/06/16</td><td>16/06/16</td><td>DV-13045</td><td>Darrin Van Huff</td><td>OFF-LA-10000240</td><td>Self-Adhesive Address Labels for Typewriters by Universal</td></tr>
+									  <tr>
+									    <td>4</td><td>-303.5280</td><td>-383.0310</td><td>US-2015-108966</td><td>11/10/15</td><td>18/10/15</td><td>SO-20335</td><td>Sean O'Donnell</td><td>FUR-TA-10000577</td><td>Bretford CR4500 Series Slim Rectangular Table</td></tr>
+									  <tr>
+									    <td>5</td><td>-7.3776</td><td>2.5164</td><td>US-2015-108966</td><td>11/10/15</td><td>18/10/15</td><td>SO-20335</td><td>Sean O'Donnell</td><td>OFF-ST-10000760</td><td>Eldon Fold 'N Roll Cart System</td></tr>
+									  <tr>
+									    <td>6</td><td>26.1169</td><td>14.1694</td><td>CA-2014-115812</td><td>09/06/14</td><td>14/06/14</td><td>BH-11710</td><td>Brosina Hoffman</td><td>FUR-FU-10001487</td><td>Eldon Expressions Wood and Plastic Desk Accessories, Cherry Wood</td></tr>
+									  <tr>
+									    <td>7</td><td>6.0516</td><td>1.9656</td><td>CA-2014-115812</td><td>09/06/14</td><td>14/06/14</td><td>BH-11710</td><td>Brosina Hoffman</td><td>OFF-AR-10002833</td><td>Newell 322</td></tr>
+									  <tr>
+									    <td>8</td><td>82.6239</td><td>90.7152</td><td>CA-2014-115812</td><td>09/06/14</td><td>14/06/14</td><td>BH-11710</td><td>Brosina Hoffman</td><td>TEC-PH-10002275</td><td>Mitel 5320 IP Phone VoIP phone</td></tr>
+									  <tr>
+									    <td>9</td><td>6.1029</td><td>5.7825</td><td>CA-2014-115812</td><td>09/06/14</td><td>14/06/14</td><td>BH-11710</td><td>Brosina Hoffman</td><td>OFF-BI-10003910</td><td>DXL Angle-View Binders with Locking Rings by Samsill</td></tr>
+									  <tr>
+									    <td>10</td><td>43.8535</td><td>34.4700</td><td>CA-2014-115812</td><td>09/06/14</td><td>14/06/14</td><td>BH-11710</td><td>Brosina Hoffman</td><td>OFF-AP-10002892</td><td>Belkin F5C206VTEL 6 Outlet Surge</td></tr>
+									  <tr>
+									    <td>11</td><td>-33.3533</td><td>85.3092</td><td>CA-2014-115812</td><td>09/06/14</td><td>14/06/14</td><td>BH-11710</td><td>Brosina Hoffman</td><td>FUR-TA-10001539</td><td>Chromcraft Rectangular Conference Tables</td></tr>
+									  <tr>
+									    <td>12</td><td>97.8466</td><td>68.3568</td><td>CA-2014-115812</td><td>09/06/14</td><td>14/06/14</td><td>BH-11710</td><td>Brosina Hoffman</td><td>TEC-PH-10002033</td><td>Konftel 250 Conference&nbsp;phone&nbsp;- Charcoal black</td></tr>
+									  <tr>
+									    <td>13</td><td>-34.7367</td><td>5.4432</td><td>CA-2017-114412</td><td>15/04/17</td><td>20/04/17</td><td>AA-10480</td><td>Andrew Allen</td><td>OFF-PA-10002365</td><td>Xerox 1967</td></tr>
+									  <tr>
+									    <td>14</td><td>109.6718</td><td>132.5922</td><td>CA-2016-161389</td><td>05/12/16</td><td>10/12/16</td><td>IM-15070</td><td>Irene Maddox</td><td>OFF-BI-10003656</td><td>Fellowes PB200 Plastic Comb Binding Machine</td></tr>
+									  <tr>
+									    <td>15</td><td>-101.8796</td><td>-123.8580</td><td>US-2015-118983</td><td>22/11/15</td><td>26/11/15</td><td>HP-14815</td><td>Harold Pawlan</td><td>OFF-AP-10002311</td><td>Holmes Replacement Filter for HEPA Air Cleaner, Very Large Room, HEPA Filter</td></tr>
+									  <tr>
+									    <td>16</td><td>-19.7446</td><td>-3.8160</td><td>US-2015-118983</td><td>22/11/15</td><td>26/11/15</td><td>HP-14815</td><td>Harold Pawlan</td><td>OFF-BI-10000756</td><td>Storex DuraTech Recycled Plastic Frosted Binders</td></tr>
+									  <tr>
+									    <td>17</td><td>24.6466</td><td>13.3176</td><td>CA-2014-105893</td><td>11/11/14</td><td>18/11/14</td><td>PK-19075</td><td>Pete Kriz</td><td>OFF-ST-10004186</td><td>Stur-D-Stor Shelving, Vertical 5-Shelf: 72"H x 36"W x 18 1/2"D</td></tr>
+									  <tr>
+									    <td>18</td><td>-10.3545</td><td>9.9900</td><td>CA-2014-167164</td><td>13/05/14</td><td>15/05/14</td><td>AG-10270</td><td>Alejandro Grove</td><td>OFF-ST-10000107</td><td>Fellowes Super Stor/Drawer</td></tr>
+									  <tr>
+									    <td>19</td><td>-5.5282</td><td>2.4824</td><td>CA-2014-143336</td><td>27/08/14</td><td>01/09/14</td><td>ZD-21925</td><td>Zuschuss Donatelli</td><td>OFF-AR-10003056</td><td>Newell 341</td></tr>
+									  <tr>
+									    <td>20</td><td>24.9349</td><td>16.0110</td><td>CA-2014-143336</td><td>27/08/14</td><td>01/09/14</td><td>ZD-21925</td><td>Zuschuss Donatelli</td><td>TEC-PH-10001949</td><td>Cisco SPA 501G IP Phone</td></tr>
+									  <tr>
+									    <td>21</td><td>12.9602</td><td>7.3840</td><td>CA-2014-143336</td><td>27/08/14</td><td>01/09/14</td><td>ZD-21925</td><td>Zuschuss Donatelli</td><td>OFF-BI-10002215</td><td>Wilson Jones Hanging View Binder, White, 1"</td></tr>
+									  <tr>
+									    <td>22</td><td>-37.8423</td><td>5.0596</td><td>CA-2016-137330</td><td>09/12/16</td><td>13/12/16</td><td>KB-16585</td><td>Ken Black</td><td>OFF-AR-10000246</td><td>Newell 318</td></tr>
+									  <tr>
+									    <td>23</td><td>-6.0678</td><td>15.6884</td><td>CA-2016-137330</td><td>09/12/16</td><td>13/12/16</td><td>KB-16585</td><td>Ken Black</td><td>OFF-AP-10001492</td><td>Acco Six-Outlet Power Strip, 4' Cord Length</td></tr>
+									  <tr>
+									    <td>24</td><td>-16.2536</td><td>-1.0196</td><td>US-2017-156909</td><td>16/07/17</td><td>18/07/17</td><td>SF-20065</td><td>Sandra Flanagan</td><td>FUR-CH-10002774</td><td>Global Deluxe Stacking Chair, Gray</td></tr>
+									  <tr>
+									    <td>25</td><td>219.5753</td><td>240.2649</td><td>CA-2015-106320</td><td>25/09/15</td><td>30/09/15</td><td>EB-13870</td><td>Emily Burns</td><td>FUR-TA-10000577</td><td>Bretford CR4500 Series Slim Rectangular Table</td></tr>
+									  <tr>
+									    <td>26</td><td>16.5143</td><td>4.2224</td><td>CA-2016-121755</td><td>16/01/16</td><td>20/01/16</td><td>EH-13945</td><td>Eric Hoffmann</td><td>OFF-BI-10001634</td><td>Wilson Jones Active Use Binders</td></tr>
+									  <tr>
+									    <td>27</td><td>24.6166</td><td>11.7741</td><td>CA-2016-121755</td><td>16/01/16</td><td>20/01/16</td><td>EH-13945</td><td>Eric Hoffmann</td><td>TEC-AC-10003027</td><td>Imation&nbsp;8GB Mini TravelDrive USB 2.0&nbsp;Flash Drive</td></tr>
+									  <tr>
+									    <td>28</td><td>-805.0956</td><td>-1665.0522</td><td>US-2015-150630</td><td>17/09/15</td><td>21/09/15</td><td>TB-21520</td><td>Tracy Blumstein</td><td>FUR-BO-10004834</td><td>Riverside Palais Royal Lawyers Bookcase, Royale Cherry Finish</td></tr>
+									  <tr>
+									    <td>29</td><td>-34.6492</td><td>-7.0532</td><td>US-2015-150630</td><td>17/09/15</td><td>21/09/15</td><td>TB-21520</td><td>Tracy Blumstein</td><td>OFF-BI-10000474</td><td>Avery Recycled Flexi-View Covers for Binding Systems</td></tr>
+									  <tr>
+									    <td>30</td><td>6.9169</td><td>15.5250</td><td>US-2015-150630</td><td>17/09/15</td><td>21/09/15</td><td>TB-21520</td><td>Tracy Blumstein</td><td>FUR-FU-10004848</td><td>Howard Miller 13-3/4" Diameter Brushed Chrome Round Wall Clock</td></tr>
+									  <tr>
+									    <td>31</td><td>10.4295</td><td>1.1016</td><td>US-2015-150630</td><td>17/09/15</td><td>21/09/15</td><td>TB-21520</td><td>Tracy Blumstein</td><td>OFF-EN-10001509</td><td>Poly String Tie Envelopes</td></tr>
+									  <tr>
+									    <td>32</td><td>1.2534</td><td>9.7092</td><td>US-2015-150630</td><td>17/09/15</td><td>21/09/15</td><td>TB-21520</td><td>Tracy Blumstein</td><td>OFF-AR-10004042</td><td>BOSTON Model 1800 Electric Pencil Sharpeners, Putty/Woodgrain</td></tr>
+									  <tr>
+									    <td>33</td><td>-77.7952</td><td>-5.7150</td><td>US-2015-150630</td><td>17/09/15</td><td>21/09/15</td><td>TB-21520</td><td>Tracy Blumstein</td><td>OFF-BI-10001525</td><td>Acco Pressboard Covers with Storage Hooks, 14 7/8" x 11", Executive Red</td></tr>
+									  <tr>
+									    <td>34</td><td>1.2534</td><td>3.5460</td><td>US-2015-150630</td><td>17/09/15</td><td>21/09/15</td><td>TB-21520</td><td>Tracy Blumstein</td><td>OFF-AR-10001683</td><td>Lumber Crayons</td></tr>
+									  <tr>
+									    <td>35</td><td>20.4376</td><td>9.9468</td><td>CA-2017-107727</td><td>19/10/17</td><td>23/10/17</td><td>MA-17560</td><td>Matt Abelman</td><td>OFF-PA-10000249</td><td>Easy-staple paper</td></tr>
+									  <tr>
+									    <td>36</td><td>281.6130</td><td>123.4737</td><td>CA-2016-117590</td><td>08/12/16</td><td>10/12/16</td><td>GH-14485</td><td>Gene Hale</td><td>TEC-PH-10004977</td><td>GE 30524EE4</td></tr>
+									  <tr>
+									    <td>37</td><td>-57.3898</td><td>-147.9630</td><td>CA-2016-117590</td><td>08/12/16</td><td>10/12/16</td><td>GH-14485</td><td>Gene Hale</td><td>FUR-FU-10003664</td><td>Electrix Architect's Clamp-On Swing Arm Lamp, Black</td></tr>
+									  <tr>
+									    <td>38</td><td>50.3078</td><td>35.4150</td><td>CA-2015-117415</td><td>27/12/15</td><td>31/12/15</td><td>SN-20710</td><td>Steve Nguyen</td><td>OFF-EN-10002986</td><td>#10-4 1/8" x 9 1/2" Premium Diagonal Seam Envelopes</td></tr>
+									  <tr>
+									    <td>39</td><td>-71.0578</td><td>-46.9764</td><td>CA-2015-117415</td><td>27/12/15</td><td>31/12/15</td><td>SN-20710</td><td>Steve Nguyen</td><td>FUR-BO-10002545</td><td>Atlantic Metals Mobile 3-Shelf Bookcases, Custom Colors</td></tr>
+									  <tr>
+									    <td>40</td><td>-26.2121</td><td>-15.1470</td><td>CA-2015-117415</td><td>27/12/15</td><td>31/12/15</td><td>SN-20710</td><td>Steve Nguyen</td><td>FUR-CH-10004218</td><td>Global Fabric Manager's Chair, Dark Gray</td></tr>
+									  <tr>
+									    <td>41</td><td>62.9506</td><td>41.7564</td><td>CA-2015-117415</td><td>27/12/15</td><td>31/12/15</td><td>SN-20710</td><td>Steve Nguyen</td><td>TEC-PH-10000486</td><td>Plantronics HL10 Handset Lifter</td></tr>
+									  <tr>
+									    <td>42</td><td>24.9256</td><td>16.5564</td><td>CA-2017-120999</td><td>10/09/17</td><td>15/09/17</td><td>LC-16930</td><td>Linda Cazamias</td><td>TEC-PH-10004093</td><td>Panasonic Kx-TS550</td></tr>
+									  <tr>
+									    <td>43</td><td>13.1005</td><td>3.8940</td><td>CA-2016-101343</td><td>17/07/16</td><td>22/07/16</td><td>RA-19885</td><td>Ruben Ausman</td><td>OFF-ST-10003479</td><td>Eldon Base for stackable storage shelf, platinum</td></tr>
+									  <tr>
+									    <td>44</td><td>-49.1049</td><td>9.5616</td><td>CA-2017-139619</td><td>19/09/17</td><td>23/09/17</td><td>ES-14080</td><td>Erin Smith</td><td>OFF-ST-10003282</td><td>Advantus 10-Drawer Portable Organizer, Chrome Metal Frame, Smoke Drawers</td></tr>
+									  <tr>
+									    <td>45</td><td>33.3033</td><td>19.7714</td><td>CA-2016-118255</td><td>11/03/16</td><td>13/03/16</td><td>ON-18715</td><td>Odella Nelson</td><td>TEC-AC-10000171</td><td>Verbatim 25 GB 6x Blu-ray Single Layer Recordable Disc, 25/Pack</td></tr>
+									  <tr>
+									    <td>46</td><td>115.1423</td><td>8.2062</td><td>CA-2016-118255</td><td>11/03/16</td><td>13/03/16</td><td>ON-18715</td><td>Odella Nelson</td><td>OFF-BI-10003291</td><td>Wilson Jones Leather-Like Binders with DublLock Round Rings</td></tr>
+									  <tr>
+									    <td>47</td><td>0.2322</td><td>8.4784</td><td>CA-2014-146703</td><td>20/10/14</td><td>25/10/14</td><td>PO-18865</td><td>Patrick O'Donnell</td><td>OFF-ST-10001713</td><td>Gould Plastics 9-Pocket Panel Bin, 18-3/8w x 5-1/4d x 20-1/2h, Black</td></tr>
+									  <tr>
+									    <td>48</td><td>12.3085</td><td>4.9500</td><td>CA-2016-169194</td><td>20/06/16</td><td>25/06/16</td><td>LH-16900</td><td>Lena Hernandez</td><td>TEC-AC-10002167</td><td>Imation&nbsp;8gb Micro Traveldrive Usb 2.0&nbsp;Flash Drive</td></tr>
+									  <tr>
+									    <td>49</td><td>10.2245</td><td>6.1040</td><td>CA-2016-169194</td><td>20/06/16</td><td>25/06/16</td><td>LH-16900</td><td>Lena Hernandez</td><td>TEC-PH-10003988</td><td>LF Elite 3D Dazzle Designer Hard Case Cover, Lf Stylus Pen and Wiper For Apple Iphone 5c Mini Lite</td></tr>
+									  <tr>
+									    <td>50</td><td>111.1692</td><td>17.9634</td><td>CA-2015-115742</td><td>18/04/15</td><td>22/04/15</td><td>DP-13000</td><td>Darren Powers</td><td>OFF-BI-10004410</td><td>C-Line Peel &amp; Stick Add-On Filing Pockets, 8-3/4 x 5-1/8, 10/Pack</td></tr>
+									  <tr>
+									    <td>51</td><td>-36.5667</td><td>35.3346</td><td>CA-2015-115742</td><td>18/04/15</td><td>22/04/15</td><td>DP-13000</td><td>Darren Powers</td><td>OFF-LA-10002762</td><td>Avery 485</td></tr>
+									  <tr>
+									    <td>52</td><td>56.3063</td><td>2.9568</td><td>CA-2015-115742</td><td>18/04/15</td><td>22/04/15</td><td>DP-13000</td><td>Darren Powers</td><td>FUR-FU-10001706</td><td>Longer-Life Soft White Bulbs</td></tr>
+									  <tr>
+									    <td>53</td><td>72.5166</td><td>17.0981</td><td>CA-2015-115742</td><td>18/04/15</td><td>22/04/15</td><td>DP-13000</td><td>Darren Powers</td><td>FUR-CH-10003061</td><td>Global Leather Task Chair, Black</td></tr>
+									  <tr>
+									    <td>54</td><td>20.9213</td><td>6.2566</td><td>CA-2016-105816</td><td>11/12/16</td><td>17/12/16</td><td>JM-15265</td><td>Janet Molinari</td><td>OFF-FA-10000304</td><td>Advantus Push Pins</td></tr>
+									  <tr>
+									    <td>55</td><td>287.5513</td><td>298.6855</td><td>CA-2016-105816</td><td>11/12/16</td><td>17/12/16</td><td>JM-15265</td><td>Janet Molinari</td><td>TEC-PH-10002447</td><td>AT&amp;T CL83451 4-Handset Telephone</td></tr>
+									  <tr>
+									    <td>56</td><td>43.0568</td><td>52.1400</td><td>CA-2016-111682</td><td>17/06/16</td><td>18/06/16</td><td>TB-21055</td><td>Ted Butterfield</td><td>OFF-ST-10000604</td><td>Home/Office Personal File Carts</td></tr>
+									  <tr>
+									    <td>57</td><td>20.4419</td><td>15.5520</td><td>CA-2016-111682</td><td>17/06/16</td><td>18/06/16</td><td>TB-21055</td><td>Ted Butterfield</td><td>OFF-PA-10001569</td><td>Xerox 232</td></tr>
+									  <tr>
+									    <td>58</td><td>11.5078</td><td>7.0980</td><td>CA-2016-111682</td><td>17/06/16</td><td>18/06/16</td><td>TB-21055</td><td>Ted Butterfield</td><td>FUR-CH-10003968</td><td>Novimex Turbo Task Chair</td></tr>
+									  <tr>
+									    <td>59</td><td>14.4879</td><td>6.9888</td><td>CA-2016-111682</td><td>17/06/16</td><td>18/06/16</td><td>TB-21055</td><td>Ted Butterfield</td><td>OFF-PA-10000587</td><td>Array Parchment Paper, Assorted Colors</td></tr>
+									  <tr>
+									    <td>60</td><td>24.0602</td><td>3.3000</td><td>CA-2016-111682</td><td>17/06/16</td><td>18/06/16</td><td>TB-21055</td><td>Ted Butterfield</td><td>TEC-AC-10002167</td><td>Imation&nbsp;8gb Micro Traveldrive Usb 2.0&nbsp;Flash Drive</td></tr>
+									  <tr>
+									    <td>61</td><td>33.6735</td><td>16.3620</td><td>CA-2016-111682</td><td>17/06/16</td><td>18/06/16</td><td>TB-21055</td><td>Ted Butterfield</td><td>OFF-BI-10001460</td><td>Plastic Binding Combs</td></tr>
+									  <tr>
+									    <td>62</td><td>21.2055</td><td>0.8400</td><td>CA-2016-111682</td><td>17/06/16</td><td>18/06/16</td><td>TB-21055</td><td>Ted Butterfield</td><td>OFF-AR-10001868</td><td>Prang Dustless Chalk Sticks</td></tr>
+									  <tr>
+									    <td>63</td><td>9.2115</td><td>6.1512</td><td>CA-2015-135545</td><td>24/11/15</td><td>30/11/15</td><td>KM-16720</td><td>Kunst Miller</td><td>TEC-AC-10004633</td><td>Verbatim 25 GB 6x Blu-ray Single Layer Recordable Disc, 3/Pack</td></tr>
+									  <tr>
+									    <td>64</td><td>20.0692</td><td>9.3612</td><td>CA-2015-135545</td><td>24/11/15</td><td>30/11/15</td><td>KM-16720</td><td>Kunst Miller</td><td>OFF-BI-10001078</td><td>Acco PRESSTEX Data Binder with Storage Hooks, Dark Blue, 14 7/8" X 11"</td></tr>
+									  <tr>
+									    <td>65</td><td>34.9020</td><td>68.9631</td><td>CA-2015-135545</td><td>24/11/15</td><td>30/11/15</td><td>KM-16720</td><td>Kunst Miller</td><td>OFF-PA-10003892</td><td>Xerox 1943</td></tr>
+									  <tr>
+									    <td>66</td><td>22.1336</td><td>22.3328</td><td>CA-2015-135545</td><td>24/11/15</td><td>30/11/15</td><td>KM-16720</td><td>Kunst Miller</td><td>FUR-FU-10000397</td><td>Luxo Economy Swing Arm Lamp</td></tr>
+									  <tr>
+									    <td>67</td><td>-45.5097</td><td>-15.2225</td><td>US-2015-164175</td><td>30/04/15</td><td>05/05/15</td><td>PS-18970</td><td>Paul Stevenson</td><td>FUR-CH-10001146</td><td>Global Value Mid-Back Manager's Chair, Gray</td></tr>
+									  <tr>
+									    <td>68</td><td>133.8284</td><td>111.3024</td><td>CA-2014-106376</td><td>05/12/14</td><td>10/12/14</td><td>BS-11590</td><td>Brendan Sweed</td><td>OFF-AR-10002671</td><td>Hunt BOSTON Model 1606 High-Volume Electric Pencil Sharpener, Beige</td></tr>
+									  <tr>
+									    <td>69</td><td>54.5112</td><td>62.9880</td><td>CA-2014-106376</td><td>05/12/14</td><td>10/12/14</td><td>BS-11590</td><td>Brendan Sweed</td><td>TEC-PH-10002726</td><td>netTALK DUO VoIP Telephone Service</td></tr>
+									  <tr>
+									    <td>70</td><td>18.5933</td><td>35.6636</td><td>CA-2016-119823</td><td>04/06/16</td><td>06/06/16</td><td>KD-16270</td><td>Karen Daniels</td><td>OFF-PA-10000482</td><td>Snap-A-Way Black Print Carbonless Ruled Speed Letter, Triplicate</td></tr>
+									  <tr>
+									    <td>71</td><td>14.8879</td><td>1.7310</td><td>CA-2016-106075</td><td>18/09/16</td><td>23/09/16</td><td>HM-14980</td><td>Henry MacAllister</td><td>OFF-BI-10004654</td><td>Avery Binding System Hidden Tab Executive Style Index Sets</td></tr>
+									  <tr>
+									    <td>72</td><td>29.7499</td><td>8.7630</td><td>CA-2017-114440</td><td>14/09/17</td><td>17/09/17</td><td>TB-21520</td><td>Tracy Blumstein</td><td>OFF-PA-10004675</td><td>Telephone Message Books with Fax/Mobile Section, 5 1/2" x 3 3/16"</td></tr>
+									  <tr>
+									    <td>73</td><td>-64.1239</td><td>-114.3912</td><td>US-2015-134026</td><td>26/04/15</td><td>02/05/15</td><td>JE-15745</td><td>Joel Eaton</td><td>FUR-CH-10000513</td><td>High-Back Leather Manager's Chair</td></tr>
+									  <tr>
+									    <td>74</td><td>23.8671</td><td>1.2130</td><td>US-2015-134026</td><td>26/04/15</td><td>02/05/15</td><td>JE-15745</td><td>Joel Eaton</td><td>FUR-FU-10003708</td><td>Tenex Traditional Chairmats for Medium Pile Carpet, Standard Lip, 36" x 48"</td></tr>
+									  <tr>
+									    <td>75</td><td>-26.7574</td><td>-18.1960</td><td>US-2015-134026</td><td>26/04/15</td><td>02/05/15</td><td>JE-15745</td><td>Joel Eaton</td><td>OFF-ST-10004123</td><td>Safco Industrial Wire Shelving System</td></tr>
+									  <tr>
+									    <td>76</td><td>-51.5185</td><td>-1.9344</td><td>US-2017-118038</td><td>09/12/17</td><td>11/12/17</td><td>KB-16600</td><td>Ken Brennan</td><td>OFF-BI-10004182</td><td>Economy Binders</td></tr>
+									  <tr>
+									    <td>77</td><td>-16.7554</td><td>-5.8248</td><td>US-2017-118038</td><td>09/12/17</td><td>11/12/17</td><td>KB-16600</td><td>Ken Brennan</td><td>FUR-FU-10000260</td><td>6" Cubicle Wall Clock, Black</td></tr>
+									  <tr>
+									    <td>78</td><td>-5.1190</td><td>2.7240</td><td>US-2017-118038</td><td>09/12/17</td><td>11/12/17</td><td>KB-16600</td><td>Ken Brennan</td><td>OFF-ST-10000615</td><td>SimpliFile Personal File, Black Granite, 15w x 6-15/16d x 11-1/4h</td></tr>
+									  <tr>
+									    <td>79</td><td>-52.9545</td><td>-14.4750</td><td>US-2014-147606</td><td>26/11/14</td><td>01/12/14</td><td>JE-15745</td><td>Joel Eaton</td><td>FUR-FU-10003194</td><td>Eldon Expressions Desk Accessory, Wood Pencil Holder, Oak</td></tr>
+									  <tr>
+									    <td>80</td><td>59.4177</td><td>56.2032</td><td>CA-2016-127208</td><td>12/06/16</td><td>15/06/16</td><td>SC-20770</td><td>Stewart Carmichael</td><td>OFF-AP-10002118</td><td>1.7 Cubic Foot Compact "Cube" Office Refrigerators</td></tr>
+									  <tr>
+									    <td>81</td><td>21.1437</td><td>8.0352</td><td>CA-2016-127208</td><td>12/06/16</td><td>15/06/16</td><td>SC-20770</td><td>Stewart Carmichael</td><td>OFF-BI-10002309</td><td>Avery Heavy-Duty EZD  Binder With Locking Rings</td></tr>
+									  <tr>
+									    <td>82</td><td>-2.9486</td><td>4.1720</td><td>CA-2014-139451</td><td>12/10/14</td><td>16/10/14</td><td>DN-13690</td><td>Duane Noonan</td><td>OFF-AR-10002053</td><td>Premium Writing Pencils, Soft, #2 by Central Association for the Blind</td></tr>
+									  <tr>
+									    <td>83</td><td>11.0574</td><td>6.2031</td><td>CA-2014-139451</td><td>12/10/14</td><td>16/10/14</td><td>DN-13690</td><td>Duane Noonan</td><td>OFF-ST-10002370</td><td>Sortfiler Multipurpose Personal File Organizer, Black</td></tr>
+									  <tr>
+									    <td>84</td><td>67.7553</td><td>62.8075</td><td>CA-2015-149734</td><td>03/09/15</td><td>08/09/15</td><td>JC-16105</td><td>Julie Creighton</td><td>OFF-EN-10000927</td><td>Jet-Pak Recycled Peel 'N' Seal Padded Mailers</td></tr>
+									  <tr>
+									    <td>85</td><td>-3.2350</td><td>-48.9549</td><td>US-2017-119662</td><td>13/11/17</td><td>16/11/17</td><td>CS-12400</td><td>Christopher Schild</td><td>OFF-ST-10003656</td><td>Safco Industrial Wire Shelving</td></tr>
+									  <tr>
+									    <td>86</td><td>46.3579</td><td>33.2156</td><td>CA-2017-140088</td><td>28/05/17</td><td>30/05/17</td><td>PO-18865</td><td>Patrick O'Donnell</td><td>FUR-CH-10000863</td><td>Novimex Swivel Fabric Task Chair</td></tr>
+									  <tr>
+									    <td>87</td><td>-11.8212</td><td>6.7966</td><td>CA-2017-155558</td><td>26/10/17</td><td>02/11/17</td><td>PG-18895</td><td>Paul Gonzalez</td><td>TEC-AC-10001998</td><td>Logitech&nbsp;LS21 Speaker System - PC Multimedia - 2.1-CH - Wired</td></tr>
+									  <tr>
+									    <td>88</td><td>-3.7774</td><td>2.9568</td><td>CA-2017-155558</td><td>26/10/17</td><td>02/11/17</td><td>PG-18895</td><td>Paul Gonzalez</td><td>OFF-LA-10000134</td><td>Avery 511</td></tr>
+									  <tr>
+									    <td>89</td><td>-20.3526</td><td>13.8572</td><td>CA-2016-159695</td><td>05/04/16</td><td>10/04/16</td><td>GM-14455</td><td>Gary Mitchum</td><td>OFF-ST-10003442</td><td>Eldon Portable Mobile Manager</td></tr>
+									  <tr>
+									    <td>90</td><td>7.2962</td><td>6.6330</td><td>CA-2016-109806</td><td>17/09/16</td><td>22/09/16</td><td>JS-15685</td><td>Jim Sink</td><td>OFF-AR-10004930</td><td>Turquoise Lead Holder with Pocket Clip</td></tr>
+									  <tr>
+									    <td>91</td><td>13.2491</td><td>8.2782</td><td>CA-2016-109806</td><td>17/09/16</td><td>22/09/16</td><td>JS-15685</td><td>Jim Sink</td><td>TEC-PH-10004093</td><td>Panasonic Kx-TS550</td></tr>
+									  <tr>
+									    <td>92</td><td>12.7136</td><td>3.1104</td><td>CA-2016-109806</td><td>17/09/16</td><td>22/09/16</td><td>JS-15685</td><td>Jim Sink</td><td>OFF-PA-10000304</td><td>Xerox 1995</td></tr>
+									  <tr>
+									    <td>93</td><td>-6.4959</td><td>6.2208</td><td>CA-2015-149587</td><td>31/01/15</td><td>05/02/15</td><td>KB-16315</td><td>Karl Braun</td><td>OFF-PA-10003177</td><td>Xerox 1999</td></tr>
+									  <tr>
+									    <td>94</td><td>5.5421</td><td>16.5354</td><td>CA-2015-149587</td><td>31/01/15</td><td>05/02/15</td><td>KB-16315</td><td>Karl Braun</td><td>FUR-FU-10003799</td><td>Seth Thomas 13 1/2" Wall Clock</td></tr>
+									  <tr>
+									    <td>95</td><td>103.4757</td><td>16.1504</td><td>CA-2015-149587</td><td>31/01/15</td><td>05/02/15</td><td>KB-16315</td><td>Karl Braun</td><td>OFF-BI-10002852</td><td>Ibico Standard Transparent Covers</td></tr>
+									  <tr>
+									    <td>96</td><td>-47.1496</td><td>-3.7880</td><td>US-2017-109484</td><td>06/11/17</td><td>12/11/17</td><td>RB-19705</td><td>Roger Barcio</td><td>OFF-BI-10004738</td><td>Flexible Leather- Look Classic Collection Ring Binder</td></tr>
+									  <tr>
+									    <td>97</td><td>35.1475</td><td>40.5426</td><td>CA-2017-161018</td><td>09/11/17</td><td>11/11/17</td><td>PN-18775</td><td>Parhena Norris</td><td>FUR-FU-10000629</td><td>9-3/4 Diameter Round Wall Clock</td></tr>
+									  <tr>
+									    <td>98</td><td>16.7594</td><td>17.9592</td><td>CA-2017-157833</td><td>17/06/17</td><td>20/06/17</td><td>KD-16345</td><td>Katherine Ducich</td><td>OFF-BI-10001721</td><td>Trimflex Flexible Post Binders</td></tr>
+									  <tr>
+									    <td>99</td><td>20.9604</td><td>22.5852</td><td>CA-2016-149223</td><td>06/09/16</td><td>11/09/16</td><td>ER-13855</td><td>Elpida Rittenbach</td><td>OFF-AP-10000358</td><td>Fellowes Basic Home/Office Series Surge Protectors</td></tr>
+									  <tr>
+									    <td>100</td><td>34.8472</td><td>22.6184</td><td>CA-2016-158568</td><td>29/08/16</td><td>02/09/16</td><td>RB-19465</td><td>Rick Bensley</td><td>OFF-PA-10003256</td><td>Avery Personal Creations Heavyweight Cards</td></tr>
+									            </tbody></table></div></section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /page content -->
+
+				<!-- footer content -->
+				<footer>
+					<div class="pull-right">
+						Akash Arora | Nathan Dpenha
+					</div>
+					<div class="clearfix"></div>
+					<!-- /footer content -->
+				</div>
+			</div>
+
+			<!-- jQuery -->
+			<script src="admin/vendors/jquery/dist/jquery.min.js"></script>
+			<!-- Bootstrap -->
+			<script src="admin/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+			<!-- FastClick -->
+			<script src="admin/vendors/fastclick/lib/fastclick.js"></script>
+			<!-- NProgress -->
+			<script src="admin/vendors/nprogress/nprogress.js"></script>
+			<!-- Chart.js -->
+			<script src="admin/vendors/Chart.js/dist/Chart.min.js"></script>
+			<!-- gauge.js -->
+			<script src="admin/vendors/gauge.js/dist/gauge.min.js"></script>
+			<!-- bootstrap-progressbar -->
+			<script src="admin/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+			<!-- iCheck -->
+			<script src="admin/vendors/iCheck/icheck.min.js"></script>
+			<!-- Skycons -->
+			<script src="admin/vendors/skycons/skycons.js"></script>
+			<!-- Flot -->
+			<script src="admin/vendors/Flot/jquery.flot.js"></script>
+			<script src="admin/vendors/Flot/jquery.flot.pie.js"></script>
+			<script src="admin/vendors/Flot/jquery.flot.time.js"></script>
+			<script src="admin/vendors/Flot/jquery.flot.stack.js"></script>
+			<script src="admin/vendors/Flot/jquery.flot.resize.js"></script>
+			<!-- Flot plugins -->
+			<script src="admin/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+			<script src="admin/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+			<script src="admin/vendors/flot.curvedlines/curvedLines.js"></script>
+			<!-- DateJS -->
+			<script src="admin/vendors/DateJS/build/date.js"></script>
+			<!-- JQVMap -->
+			<script src="admin/vendors/jqvmap/dist/jquery.vmap.js"></script>
+			<script src="admin/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+			<script src="admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+			<!-- bootstrap-daterangepicker -->
+			<script src="admin/vendors/moment/min/moment.min.js"></script>
+			<script src="admin/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+			<script src="admin/vendors/datatables.net/js/jquery.dataTables.js" charset="utf-8"></script>
+			<script src="admin/vendors/datatables.net-bs/js/dataTables.bootstrap.js" charset="utf-8"></script>
+			<!-- Custom Theme Scripts -->
+
+			<script>
+			$(document).ready(function() {
+				var table = $('#tbl').DataTable();
+				for (i=3;i<9;++i){
+					var column = table.column( i );
+					 column.visible( ! column.visible() );
+				}
+			});
+			</script>
+		<script src="admin/build/js/custom.min.js"></script>
+		</body>
+		</html>
