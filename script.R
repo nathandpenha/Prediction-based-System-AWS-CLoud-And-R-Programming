@@ -15,17 +15,21 @@ function(res) {
   res$setHeader("Access-Control-Allow-Origin", "*")
   plumber::forward()
 }
-raw_data <- read.csv("~/Prediction-based-System-AWS-CLoud-And-R-Programming/Raw Data.csv")
-data <- read.csv("~/Prediction-based-System-AWS-CLoud-And-R-Programming/Sample - Superstore.csv")
+raw_data <- read.csv("~/Suggestion-Prediction-based-in-R-programming-Using-Apriori-algorithm/Raw Data.csv")
+data <- read.csv("~/Suggestion-Prediction-based-in-R-programming-Using-Apriori-algorithm/Sample - Superstore.csv")
 clean_data <- ddply(data, c("Order.ID","Order.Date","Ship.Mode","Segment","City","State","Region"), function(dd)paste(dd$Product.Name, collapse = ","))
 
 
 #' Retun the summary from a particular category
 #' @param val the category
-#' @post /category
-function(val){
-  df_cat <- data.frame(Name=data$Product.Name[which(data$Category == val)])
-  toJSON(lapply(df_cat, function(x){as.list(summary(x))}), pretty = TRUE, auto_unbox = TRUE)
+#' @get /category
+cat <- function(){
+  df_cat <- c()
+  for (val in unique(data$Category)){
+    df_cat[val] <- data.frame(Name=data$Product.Name[which(data$Category == val)])  
+  }
+  #toJSON(lapply(df_cat, function(x){as.list(summary(x))}), pretty = TRUE, auto_unbox = TRUE)
+  lapply(df_cat, function(x1){as.list(summary(x1, maxsum=10))})
 }
 
 #' Market Analysis
@@ -119,8 +123,8 @@ data_sorted$Order.ID <- as.numeric(data_sorted$Order.ID)
 data_item <- ddply(data, c("Order.ID"), function(dd)paste(dd$Product.Name, collapse = ","))
 
 data_item$Order.ID <- NULL
-write.csv(data_item,"~/Prediction-based-System-AWS-CLoud-And-R-Programming/link.csv")
-trans <- read.transactions("~/Prediction-based-System-AWS-CLoud-And-R-Programming/link.csv", format = "basket", sep=",", cols=1)
+write.csv(data_item,"~/Suggestion-Prediction-based-in-R-programming-Using-Apriori-algorithm/link.csv")
+trans <- read.transactions("~/Suggestion-Prediction-based-in-R-programming-Using-Apriori-algorithm/link.csv", format = "basket", sep=",", cols=1)
 trans@itemInfo$labels <- gsub("\"","", trans@itemInfo$labels)
 basket_rules <- apriori(trans,parameter = list(supp = 0.001, minlen = 1, target = "frequent itemsets" ))
 ins <- inspect(basket_rules)
