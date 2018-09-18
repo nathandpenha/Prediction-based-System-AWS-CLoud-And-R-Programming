@@ -1,34 +1,34 @@
 $(document).ready(function() {
 	$.ajax({
-		url: 'ec2-13-232-189-242.ap-south-1.compute.amazonaws.com/totalRecords',
+		url: 'http://ec2-13-232-189-242.ap-south-1.compute.amazonaws.com:9191/totalRecords',
 		type: 'GET',
 		success: function(success){
 			$(".totalRecords").html(success);
 		},
 	});
 	$.ajax({
-		url: 'ec2-13-232-189-242.ap-south-1.compute.amazonaws.com/totalProducts',
+		url: 'http://ec2-13-232-189-242.ap-south-1.compute.amazonaws.com:9191/totalProducts',
 		type: 'GET',
 		success: function(success){
 			$(".totalProducts").html(success);
 		},
 	});
 	$.ajax({
-		url: 'ec2-13-232-189-242.ap-south-1.compute.amazonaws.com/users',
+		url: 'http://ec2-13-232-189-242.ap-south-1.compute.amazonaws.com:9191/users',
 		type: 'GET',
 		success: function(success){
 			$(".users").html(success);
 		},
 	});
 	$.ajax({
-		url: 'ec2-13-232-189-242.ap-south-1.compute.amazonaws.com/profit',
+		url: 'http://ec2-13-232-189-242.ap-south-1.compute.amazonaws.com:9191/profit',
 		type: 'GET',
 		success: function(success){
 			$(".profit").html("$ "+success);
 		},
 	});
 	$.ajax({
-		url: 'ec2-13-232-189-242.ap-south-1.compute.amazonaws.com/segmentData',
+		url: 'http://ec2-13-232-189-242.ap-south-1.compute.amazonaws.com:9191/segmentData',
 		type: 'GET',
 		success: function(success){
 			js = success[0].split(",");
@@ -71,7 +71,7 @@ $(document).ready(function() {
 		},
 	});
 	$.ajax({
-		url: 'ec2-13-232-189-242.ap-south-1.compute.amazonaws.com/ship',
+		url: 'http://ec2-13-232-189-242.ap-south-1.compute.amazonaws.com:9191/ship',
 		type: 'GET',
 		success: function(data){
 			var morris = Morris.Bar({
