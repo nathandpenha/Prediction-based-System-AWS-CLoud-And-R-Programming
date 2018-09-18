@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$.ajax({
-		url: 'http://localhost:9191/market',
+		url: 'http://ec2-13-232-189-242.ap-south-1.compute.amazonaws.com:9191/market',
 		type: 'GET',
 		success: function(data){
 			var dis ="";
